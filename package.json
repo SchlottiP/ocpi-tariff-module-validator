@@ -6,7 +6,6 @@
     "package:global-charge-services": "npx pkg dist/global-charge-services.js --targets node16-macos-arm64,node16-linux-x64,node16-win-x64 --output dist/global-charge-validator-global-charge-services",
     "build-and-package:finest-charge-ltd": "npm run build:finest-charge-ltd && npm run package:finest-charge-ltd",
     "build-and-package:global-charge-services": "npm run build:global-charge-services && npm run package:global-charge-services"
-
   },
   "dependencies": {
     "@types/node": "^22.12.0",
@@ -15,10 +14,12 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.14",
     "esbuild": "^0.24.2",
-    "pkg": "^5.8.1"
+    "jest": "^29.7.0",
+    "pkg": "^5.8.1",
+    "ts-jest": "^29.2.5"
   },
-
   "pkg": {
     "targets": [
       "node18-macos-arm64",

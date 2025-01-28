@@ -69,19 +69,12 @@ export interface ValidationTariffData {
     currency: string; // ISO-4217 currency code
     country_code: string; // ISO-3166 alpha-2 country code of the CPO
     party_id: string;
+    id: string
 }
 
 export interface Tariff extends ValidationTariffData {
-    country_code: string; // ISO-3166 alpha-2 country code of the CPO
-    party_id: string; // ID of the CPO that owns this Tariff //TODO: where do I get the tariff code from?
-    id: string;
-    currency: string; // ISO-4217 currency code
-    type?: TariffType;
     tariff_alt_text?: string[];
     tariff_alt_url?: string;
-    min_price?: number;
-    max_price?: number;
-    elements: TariffElement[];
     start_date_time?: string; // Start time of tariff validity (UTC)
     end_date_time?: string; // End time of tariff validity (UTC)
     energy_mix?: EnergyMix; // not relevant in this context so far

@@ -7,5 +7,5 @@ export interface ValidationResult {
 
 export interface CpoValidationDataProvider<T> {
     getData(inputFilePath? : string): T[]
-    validateData(cpoData: T[], enapiTariffs: Tariff[]): ValidationResult[];
+    validateData(cpoData: T[], enapiTariffs: ValidationTariffData[]): ValidationResult[];
 }
