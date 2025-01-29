@@ -61,6 +61,7 @@ export interface EnergyMix {
     // Not relevant for the validation and not part of the TariffModul.
     // Could be added in a later state of the project
 }
+
 export interface ValidationTariffData {
     min_price?: number;
     max_price?: number;

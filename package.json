@@ -1,9 +1,10 @@
 {
   "scripts": {
+    "test": "npx jest",
     "build:finest-charge-ltd": "esbuild app/index.ts --bundle --platform=node --define:CPO='\"finest-charge-ltd\"' --outfile=dist/finest-charge-ltd.js",
     "build:global-charge-services": "esbuild app/index.ts --bundle --platform=node --define:CPO='\"global-charge-services\"' --outfile=dist/global-charge-services.js",
-    "package:finest-charge-ltd": "npx pkg dist/finest-charge-ltd.js --targets node16-macos-arm64,node16-linux-x64,node16-win-x64 --output dist/global-charge-validator-finest-charge-ltd",
-    "package:global-charge-services": "npx pkg dist/global-charge-services.js --targets node16-macos-arm64,node16-linux-x64,node16-win-x64 --output dist/global-charge-validator-global-charge-services",
+    "package:finest-charge-ltd": "npx pkg dist/finest-charge-ltd.js --output finest-charge-ltd",
+    "package:global-charge-services": "npx pkg dist/global-charge-services.js  --output global-charge-services",
     "build-and-package:finest-charge-ltd": "npm run build:finest-charge-ltd && npm run package:finest-charge-ltd",
     "build-and-package:global-charge-services": "npm run build:global-charge-services && npm run package:global-charge-services"
   },

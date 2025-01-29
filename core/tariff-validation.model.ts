@@ -1,11 +1,14 @@
-import {Tariff, ValidationTariffData} from "./tariff.model";
+import {ValidationTariffData} from "./tariff.model";
 
 export interface ValidationResult {
     isValid: boolean;
     discrepancies: string[];
 }
 
-export interface CpoValidationDataProvider<T> {
-    getData(inputFilePath? : string): T[]
+export interface CpoValidationProvider<T> {
     validateData(cpoData: T[], enapiTariffs: ValidationTariffData[]): ValidationResult[];
+}
+
+export interface CpoDataProvider<T> {
+    getData(inputFilePath? : string): Promise<T[]>
 }
