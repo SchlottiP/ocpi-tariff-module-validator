@@ -1,4 +1,3 @@
-import * as fs from "fs";
 import {EnapiApiClientMockImplementation} from "../core/enapi-tariff-api-client";
 import {formatResults} from "./output-handler";
 import {CpoConfig} from "../core";
@@ -13,7 +12,7 @@ import yargs from "yargs";
  * this could be handled by a dynmaic import,
  * but I was not able to make it work in the timeframe of the task
  */
-const cpoConfigMap: Record<string, CpoConfig> = {
+const cpoConfigMap: Record<string, CpoConfig<any>> = {
     "finest-charge-ltd": finestChargeConfig,
     "global-charge-services": globalChargeConfig,
 };

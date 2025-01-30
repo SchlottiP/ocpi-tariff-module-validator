@@ -1,5 +1,4 @@
-import { FinestChargeTariff } from "./finest-charge-ltd-data.ts";
-
+import {FinestChargeTariff} from "./index";
 
 export interface FinestChargeLtdClient {
     fetchTariffs(): Promise<FinestChargeTariff[]>;

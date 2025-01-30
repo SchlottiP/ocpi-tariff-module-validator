@@ -2,7 +2,6 @@
  * Interface representing a single Finest Charge Ltd tariff.
  */
 import {CpoValidationProvider, ValidationResult} from "../core/tariff-validation.model";
-import {FinestChargeLtdClient, MockFinestChargeLtdClient} from "./finest-charge-ltd-client";
 import {TariffDimensionType, TariffElement, ValidationTariffData} from "../core/tariff.model";
 import {FinestChargeTariff} from "./index";
 
@@ -71,7 +70,7 @@ export class FinestChargeLtdValidator implements CpoValidationProvider<FinestCha
         const tariffElement = enapiTariff.elements[0];
 
         discrepancies.push(...this.validateCountryCode(enapiTariff));
-        discrepancies.push(...this.validateCurrency(cpoTariff, enapiTariff));
+        discrepancies.push(...this.validateCurrency(enapiTariff));
         discrepancies.push(...this.validatePricePerKwh(cpoTariff, tariffElement));
         discrepancies.push(...this.validateHourlyParkingRate(cpoTariff, tariffElement));
         discrepancies.push(...this.validateConnectionFee(cpoTariff, tariffElement));
@@ -90,7 +89,7 @@ export class FinestChargeLtdValidator implements CpoValidationProvider<FinestCha
         return discrepancies;
     }
 
-    private validateCurrency(cpoTariff: FinestChargeTariff, enapiTariff: ValidationTariffData): string[] {
+    private validateCurrency(enapiTariff: ValidationTariffData): string[] {
         const discrepancies: string[] = [];
         if (enapiTariff.currency !== "GBP") {
             discrepancies.push(`Currency mismatch: Expected 'GBP' but found '${enapiTariff.currency}'.`);

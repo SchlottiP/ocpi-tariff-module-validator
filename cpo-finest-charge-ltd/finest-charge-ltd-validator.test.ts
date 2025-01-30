@@ -1,11 +1,12 @@
-import {FinestChargeLtdDataProvider, FinestChargeTariff} from "./finest-charge-ltd-data.ts";
 import {TariffDimensionType, ValidationTariffData} from "../core/tariff.model";
+import {FinestChargeTariff} from "./index";
+import {FinestChargeLtdValidator} from "./finest-charge-ltd-validator";
 
 describe("FinestChargeLtdData.validateData", () => {
-    let validator: FinestChargeLtdDataProvider;
+    let validator: FinestChargeLtdValidator;
 
     beforeEach(() => {
-        validator = new FinestChargeLtdDataProvider();
+        validator = new FinestChargeLtdValidator();
     });
 
     it("should validate matching tariffs successfully", () => {

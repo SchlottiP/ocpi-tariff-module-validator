@@ -1,6 +1,4 @@
 import * as fs from "fs";
-import {Tariff, TariffDimensionType, TariffType, ValidationTariffData} from "../core/tariff.model";
-import {ValidationResult} from "../core/tariff-validation.model";
 import {GlobalChargeServicesDataProvider} from "./global-charge-services-data";
 import {GlobalChargeRow} from "./index";
 

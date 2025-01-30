@@ -1,5 +1,3 @@
-
-import {GlobalChargeServicesValidator} from "../cpo-global-charge-services/global-charge-services-validator";
 import {CpoConfig} from "../core";
 import {FinestChargeLtdDataProvider} from "./finest-charge-ltd-data.ts";
 import {FinestChargeLtdValidator} from "./finest-charge-ltd-validator";

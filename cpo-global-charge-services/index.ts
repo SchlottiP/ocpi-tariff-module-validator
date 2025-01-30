@@ -1,4 +1,4 @@
-import {CpoConfig, validateTariff} from '../core';
+import {CpoConfig} from '../core';
 import {GlobalChargeServicesValidator} from "./global-charge-services-validator";
 import {GlobalChargeServicesDataProvider} from "./global-charge-services-data";
 

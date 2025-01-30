@@ -1,6 +1,6 @@
 import {Tariff, TariffDimensionType} from "./tariff.model";
 
-/*
+    /*
     * Prototyping quality, missing pagination (and any kind of updatedAt handling)
     * missing all the authentication/connection related, this is also why this currently only get's the cpoId as an input
     * it's expected that this only returns tariffs that are currently valid
@@ -12,7 +12,7 @@ export interface EnapiApiClient {
 }
 
 
-function generateLastUpdated(daysAgo: number= 1): string {
+function generateLastUpdated(daysAgo: number = 1): string {
     const date = new Date();
     date.setDate(date.getDate() - daysAgo);
     return date.toISOString();
@@ -36,9 +36,9 @@ export class EnapiApiClientMockImplementation implements EnapiApiClient {
                 elements: [
                     {
                         price_components: [
-                            { type: TariffDimensionType.ENERGY, price: 0.25, step_size: 1 },
+                            {type: TariffDimensionType.ENERGY, price: 0.25, step_size: 1},
                         ],
-                        restrictions: { start_time: "09:00", end_time: "18:00" },
+                        restrictions: {start_time: "09:00", end_time: "18:00"},
                     },
                 ],
                 last_updated: generateLastUpdated(),
@@ -51,10 +51,10 @@ export class EnapiApiClientMockImplementation implements EnapiApiClient {
                 elements: [
                     {
                         price_components: [
-                            { type: TariffDimensionType.ENERGY, price: 0.20, step_size: 1 },
-                            { type: TariffDimensionType.PARKING_TIME, price: 1.80, step_size: 900 },
+                            {type: TariffDimensionType.ENERGY, price: 0.20, step_size: 1},
+                            {type: TariffDimensionType.PARKING_TIME, price: 1.80, step_size: 900},
                         ],
-                        restrictions: { start_time: "09:00", end_time: "18:00" },
+                        restrictions: {start_time: "09:00", end_time: "18:00"},
                     },
                 ],
                 last_updated: generateLastUpdated(),
@@ -68,9 +68,9 @@ export class EnapiApiClientMockImplementation implements EnapiApiClient {
                 elements: [
                     {
                         price_components: [
-                            { type: TariffDimensionType.ENERGY, price: 0.28, step_size: 1 },
-                            { type: TariffDimensionType.PARKING_TIME, price: 3.0, step_size: 900 },
-                            { type: TariffDimensionType.FLAT, price: 1.0, step_size: 900 },
+                            {type: TariffDimensionType.ENERGY, price: 0.28, step_size: 1},
+                            {type: TariffDimensionType.PARKING_TIME, price: 3.0, step_size: 900},
+                            {type: TariffDimensionType.FLAT, price: 1.0, step_size: 900},
                         ],
                     },
                 ],
@@ -84,8 +84,8 @@ export class EnapiApiClientMockImplementation implements EnapiApiClient {
                 elements: [
                     {
                         price_components: [
-                            { type: TariffDimensionType.ENERGY, price: 0.27, step_size: 1 },
-                            { type: TariffDimensionType.PARKING_TIME, price: 2.5, step_size: 900 },
+                            {type: TariffDimensionType.ENERGY, price: 0.27, step_size: 1},
+                            {type: TariffDimensionType.PARKING_TIME, price: 2.5, step_size: 900},
                         ],
                     },
                 ],

@@ -1,5 +1,4 @@
 import {CpoValidationProvider, ValidationResult} from "../core/tariff-validation.model";
-import {readFileSync} from "fs";
 import {TariffDimensionType, TariffElement, ValidationTariffData} from "../core/tariff.model";
 import {splitProvider} from "./utilities";
 import {GlobalChargeRow} from "./index";

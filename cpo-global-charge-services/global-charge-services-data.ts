@@ -1,7 +1,5 @@
-import {CpoDataProvider, ValidationResult} from "../core/tariff-validation.model";
+import {CpoDataProvider} from "../core/tariff-validation.model";
 import {readFileSync} from "fs";
-import {TariffDimensionType, TariffElement, ValidationTariffData} from "../core/tariff.model";
-import {splitProvider} from "./utilities";
 import {GlobalChargeRow} from "./index";
 
 
@@ -25,7 +23,7 @@ export class GlobalChargeServicesDataProvider
         const actualHeaders = rows[0];
         this.validateHeader(actualHeaders);
 
-        return Promise.resolve(rows.slice(1).map((row, index) => {
+        return Promise.resolve(rows.slice(1).map((row, _) => {
             const data: any = {};
             actualHeaders.forEach((header, i) => {
                 data[header] = this.parseValue(header as keyof GlobalChargeRow, row[i]);
